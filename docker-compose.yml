@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  cli:
+    build: .
+    container_name: secure-cli
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/cli.db
+    stdin_open: true # Keep stdin open (like -i)
+    tty: true        # Allocate a pseudo-TTY (like -t)
